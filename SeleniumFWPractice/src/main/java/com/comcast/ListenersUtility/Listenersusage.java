@@ -13,7 +13,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.comcast.crm.BaseclassUtility.Baseclass_Test;
+import com.comcast.crm.BaseclassUtility.TreadUsage;
 import com.generic.Javautility.JavaUtility;
 import com.generic.WebDriverutility.WebdriverUtility;
 
@@ -22,7 +22,7 @@ public class Listenersusage implements ITestListener, ISuiteListener {
 	WebdriverUtility wutil= new WebdriverUtility();
 	JavaUtility jutil=new JavaUtility();
 	public ExtentReports reports;
-	public static ExtentTest test;
+	public ExtentTest test;
 	
 	public void onStart(ISuite suite) {
 		String time= new Date().toString().replace(':', '_');
@@ -51,6 +51,7 @@ public class Listenersusage implements ITestListener, ISuiteListener {
 	public void onTestStart(ITestResult result) {
 		
 	test=reports.createTest(result.getMethod().getMethodName());
+	TreadUsage.setTest(test);
 		
 		
 		System.out.println("on Test start");
@@ -68,9 +69,9 @@ public class Listenersusage implements ITestListener, ISuiteListener {
 
 		//String name= result.getMethod().getMethodName();
 		System.out.println(jutil.GetSystemDate("yyyy-MM-dd").replace(':', '_'));
-			TakesScreenshot sh= (TakesScreenshot)Baseclass_Test.sdriver;
+			TakesScreenshot sh= (TakesScreenshot)TreadUsage.getDriver();
 		String takenpath=	sh.getScreenshotAs(OutputType.BASE64);
-		test.addScreenCaptureFromBase64String(takenpath, "crmReportSS");
+		TreadUsage.getTest().addScreenCaptureFromBase64String(takenpath, "crmReportSS");
 		
 		System.out.println("on test fail");
 		

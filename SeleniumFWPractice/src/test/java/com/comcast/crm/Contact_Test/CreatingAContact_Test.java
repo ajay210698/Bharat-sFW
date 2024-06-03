@@ -2,13 +2,12 @@ package com.comcast.crm.Contact_Test;
 
 import static org.testng.Assert.assertEquals;
 
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
-import com.comcast.ListenersUtility.Listenersusage;
 import com.comcast.crm.BaseclassUtility.Baseclass_Test;
-@Listeners(com.comcast.ListenersUtility.Listenersusage.class)
+import com.comcast.crm.BaseclassUtility.TreadUsage;
+
 public class CreatingAContact_Test extends Baseclass_Test {
 
 	@Test(groups = "smoke")
@@ -17,21 +16,25 @@ public class CreatingAContact_Test extends Baseclass_Test {
 		hp.getContactModule().click();
 		Thread.sleep(5000);
 		assertEquals(cp.getContactPageHeading().getText(), "Contacts");
-	Listenersusage.test.log(Status.INFO,"Contact page displyed");
+	TreadUsage.getTest().log(Status.INFO,"Contact page displyed");
 		cp.getCreateContactButton().click();
 		assertEquals(cnc.getCreateContactHeade().getText(), "Creating New Contact");
-		Listenersusage.test.log(Status.INFO,"create a new contact page displayed");
+			
+		
+			
+				
+			TreadUsage.getTest().log(Status.INFO,"create a new contact page displayed");
 		cnc.getEnterFristname().sendKeys(eutil.GetTheDataFromExcelFile("Sheet2", 1, 6));
 		String lastName = eutil.GetTheDataFromExcelFile("Sheet2", 1, 5) + jutil.RandomNumber();
 		cnc.getEnterLastname().sendKeys(lastName);
 		cnc.getEnterMObileNUmber().sendKeys(eutil.GetTheDataFromExcelFile("Sheet2", 1, 4));
 		cnc.getSaveContactBitton().click();
 		if ((cnc.getCreatedContactHeader().getText()).contains(lastName)) {
-			Listenersusage.test.log(Status.PASS,"contact created succeessfully and the id and name of the contact is  "
+			TreadUsage.getTest().log(Status.PASS,"contact created succeessfully and the id and name of the contact is  "
 					+ cnc.getCreatedContactHeader().getText());
 		} else
 		{
-			Listenersusage.test.log(Status.FAIL,"contact not created according to your expextations");
+			TreadUsage.getTest().log(Status.FAIL,"contact not created according to your expextations");
 		}
 	}
 	@Test(groups ={"functional" ,"regression"})
@@ -43,29 +46,29 @@ public class CreatingAContact_Test extends Baseclass_Test {
 		  String actualresult1 =op.getOrgPageHead().getText();
 		  String expectedresult1  = "Organizations";
 		  assertEquals(actualresult1, expectedresult1);
-		  Listenersusage.test.log(Status.INFO,"organization page displayed ");		 
+		 TreadUsage.getTest().log(Status.INFO,"organization page displayed ");		 
 		  op.getCreatOrgButton().click();		  
 		  String actualresult2= cop.getCreateorgPageHeader().getText();
 		  String  expectedresult2="Creating New Organization";	  
 		  assertEquals(actualresult2, expectedresult2);
-		  Listenersusage.test.log(Status.INFO,"create organization page displayed ");
+		  TreadUsage.getTest().log(Status.INFO,"create organization page displayed ");
 		  String orgname=eutil.GetTheDataFromExcelFile("Sheet2", 1, 2)+jutil.RandomNumber();
 		  cop.getOrgnameinput().sendKeys(orgname);
 		  //Thread.sleep(5000);
 	        cop.getSaveutton().click();
 	     if((cop.getCheckingcreatedOrgHead().getText()).contains(orgname)) {
-	    	 Listenersusage.test.log(Status.PASS,orgname + "created successfully");
+	    	 TreadUsage.getTest().log(Status.PASS,orgname + "created successfully");
 	     }
 	     else {
-	    	 Listenersusage.test.log(Status.FAIL,orgname + "not created");
+	    	 TreadUsage.getTest().log(Status.FAIL,orgname + "not created");
 	    	 }
 		   hp.getContactModule().click();		   
 		   Thread.sleep(5000);		   
 		   assertEquals(cp.getContactPageHeading().getText(), "Contacts");
-		   Listenersusage.test.log(Status.INFO,"Contact page displyed");
+		   TreadUsage.getTest().log(Status.INFO,"Contact page displyed");
 		   cp.getCreateContactButton().click();
 		   assertEquals(cnc.getCreateContactHeade().getText(), "Creating New Contact");		   
-		   Listenersusage.test.log(Status.INFO,"create a new contact page displayed");		   
+		   TreadUsage.getTest().log(Status.INFO,"create a new contact page displayed");		   
 		   cnc.getEnterFristname().sendKeys(eutil.GetTheDataFromExcelFile("Sheet2", 1, 6));
 		   String lastName=eutil.GetTheDataFromExcelFile("Sheet2", 1, 5)+jutil.RandomNumber();
 		   cnc.getEnterLastname().sendKeys(lastName);
@@ -86,11 +89,11 @@ public class CreatingAContact_Test extends Baseclass_Test {
 		   Thread.sleep(5000);
 		      cnc.getSaveContactBitton().click();
         if((cnc.getCreatedContactHeader().getText()).contains(lastName)) {			   
-        	Listenersusage.test.log(Status.PASS,"contact created succeessfully and the id and name of the contact is  "+ cnc.getCreatedContactHeader().getText());			   
+        	TreadUsage.getTest().log(Status.PASS,"contact created succeessfully and the id and name of the contact is  "+ cnc.getCreatedContactHeader().getText());			   
 		   }
 		   else 		   
 		   {
-			   Listenersusage.test.log(Status.FAIL,"contact not created according to your expextations");			   
+			   TreadUsage.getTest().log(Status.FAIL,"contact not created according to your expextations");			   
 		   }        
         String orgcheckin=cnc.getCheckingTheSavedOrgName().getText().trim();
 		   //System.out.println(orgcheckin);
@@ -98,9 +101,9 @@ public class CreatingAContact_Test extends Baseclass_Test {
 		  //assertEquals(actualresult2, expectedresult2); cnc.getCheckingTheSavedOrgName()
 		if(orgcheckin.equals(orgname))
 		{
-			Listenersusage.test.log(Status.PASS,"selected organization is "+ orgname +" and saved organization is "+cnc.getCheckingTheSavedOrgName().getText()+" both are same.");
+			TreadUsage.getTest().log(Status.PASS,"selected organization is "+ orgname +" and saved organization is "+cnc.getCheckingTheSavedOrgName().getText()+" both are same.");
 		}else {
-			Listenersusage.test.log(Status.FAIL,"there is a mistake in your script");
+			TreadUsage.getTest().log(Status.FAIL,"there is a mistake in your script");
 		}
 	}
 	
@@ -113,12 +116,12 @@ public class CreatingAContact_Test extends Baseclass_Test {
 		hp.getContactModule().click();
 		Thread.sleep(5000);
 
-		assertEquals(cp.getContactPageHeading().getText(), "Contcts");
+		assertEquals(cp.getContactPageHeading().getText(), "Contacts");
 		System.out.println("Contact page displyed");
 		cp.getCreateContactButton().click();
 		assertEquals(cnc.getCreateContactHeade().getText(), "Creating New Contact");
 
-		Listenersusage.test.log(Status.INFO,"create a new contact page displayed");
+		TreadUsage.getTest().log(Status.INFO,"create a new contact page displayed");
 
 		cnc.getEnterFristname().sendKeys(eutil.GetTheDataFromExcelFile("Sheet2", 1, 6));
 		String lastName = eutil.GetTheDataFromExcelFile("Sheet2", 1, 5) + jutil.RandomNumber();
@@ -132,13 +135,13 @@ public class CreatingAContact_Test extends Baseclass_Test {
 		cnc.getEnterSupportEndDate().clear();
 		cnc.getEnterSupportEndDate().sendKeys(enddate);
 
-		Listenersusage.test.log(Status.INFO,cnc.getEnterSupportEndDate().getText());
+		TreadUsage.getTest().log(Status.INFO,cnc.getEnterSupportEndDate().getText());
 
 		cnc.getSaveContactBitton().click();
 
 		if ((cnc.getCreatedContactHeader().getText()).contains(lastName)) {
 
-			Listenersusage.test.log(Status.PASS,"contact created succeessfully and the id and name of the contact is  "
+			TreadUsage.getTest().log(Status.PASS,"contact created succeessfully and the id and name of the contact is  "
 					+ cnc.getCreatedContactHeader().getText());
 
 		} else
@@ -149,12 +152,12 @@ public class CreatingAContact_Test extends Baseclass_Test {
 		}
 		assertEquals(cnc.getCheckingSupportStartDate().getText(), startdate);
 
-		Listenersusage.test.log(Status.PASS,"the date you enterd : " + startdate + " and the date saved : "
+		TreadUsage.getTest().log(Status.PASS,"the date you enterd : " + startdate + " and the date saved : "
 				+ cnc.getCheckingSupportStartDate().getText() + " is same");
 
 		assertEquals(cnc.getCheckingSupportEndDate().getText(), enddate);
 
-		Listenersusage.test.log(Status.PASS,"the date you enterd : " + enddate + " and the date saved : "
+		TreadUsage.getTest().log(Status.PASS,"the date you enterd : " + enddate + " and the date saved : "
 				+ cnc.getCheckingSupportEndDate().getText() + " is same");
 
 	}

@@ -6,10 +6,12 @@
       <class name="com.comcast.crm.Contact_Test.CreatingAContact_Test">
         <methods>
           <include name="ClosingTehBrowser"/>
+          <include name="CreatingContactWIthOrgName"/>
           <include name="closingTheDbConnection"/>
           <include name="CreatingContactWithDate"/>
           <include name="LoggingIntoApp"/>
           <include name="OpeningBrowser"/>
+          <include name="creatingcontact"/>
           <include name="ConnectinhToTheDb"/>
           <include name="logoutFromApp"/>
         </methods>

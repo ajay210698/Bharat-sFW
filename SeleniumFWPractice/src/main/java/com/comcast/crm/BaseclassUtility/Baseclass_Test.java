@@ -12,6 +12,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
+
 import com.comcast.crm.objectrepositoryutility.ContactPage;
 import com.comcast.crm.objectrepositoryutility.CreateOrgPage;
 import com.comcast.crm.objectrepositoryutility.CreatingNewContact;
@@ -24,11 +27,12 @@ import com.generic.databaseutility.DataBaseUtility;
 import com.genericutility.ExcelUtility;
 import com.genericutility.PropertyUtility;
 
-//@Listeners(com.comcast.ListenersUtility.Listenersusage.class)
+@Listeners(com.comcast.ListenersUtility.Listenersusage.class)
 public class Baseclass_Test {
 
 	public WebDriver driver = null;
-	public static WebDriver sdriver = null;
+	public static WebDriver sdriver;
+	
 
 	public PropertyUtility putil = new PropertyUtility();
 	public WebdriverUtility wutil = new WebdriverUtility();
@@ -54,14 +58,15 @@ public class Baseclass_Test {
 		
 	}
 
-	// @Parameters("Browser")
+	//@Parameters("Browser")
 	@BeforeClass
 	public void OpeningBrowser() throws IOException {
 
 		driver = wutil.OpenBrowser(driver, putil.GetDataFromPropertyFile("browser"),
 				putil.GetDataFromPropertyFile("url"));
-
-		sdriver = driver;
+      sdriver= driver;
+		
+		//TreadUsage.setDriver(driver);
 		driver.manage().window().maximize();
 		wutil.WaitUntillPageLoded(driver);
 		lp = new LoginPage(driver);
