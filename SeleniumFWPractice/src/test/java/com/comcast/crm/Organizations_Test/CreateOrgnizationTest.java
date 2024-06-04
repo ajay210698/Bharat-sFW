@@ -23,7 +23,7 @@ public class CreateOrgnizationTest extends Baseclass_Test {
 		String expectedresult2 = "Creating New Organization";
 		assertEquals(actualresult2, expectedresult2);
 		 TreadUsage.getTest().log(Status.INFO,"create organization page displayed ");
-		String orgname = eutil.GetTheDataFromExcelFile("Sheet2", 1, 0) + jutil.RandomNumber();
+		String orgname = eutil.GetTheDataFromExcelFile("Sheet2", 1, 2) + jutil.RandomNumber();
 		cop.getOrgnameinput().sendKeys(orgname);
 		cop.getSaveutton().click();
 		if ((cop.getCheckingcreatedOrgHead().getText()).contains(orgname)) {

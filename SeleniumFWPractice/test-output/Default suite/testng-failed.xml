@@ -3,19 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.comcast.crm.Contact_Test.CreatingAContact_Test">
+      <class name="com.comcast.crm.Organizations_Test.CreateOrgnizationTest">
         <methods>
           <include name="ClosingTehBrowser"/>
-          <include name="CreatingContactWIthOrgName"/>
           <include name="closingTheDbConnection"/>
-          <include name="CreatingContactWithDate"/>
           <include name="LoggingIntoApp"/>
           <include name="OpeningBrowser"/>
-          <include name="creatingcontact"/>
+          <include name="CreateOrganization"/>
           <include name="ConnectinhToTheDb"/>
           <include name="logoutFromApp"/>
         </methods>
-      </class> <!-- com.comcast.crm.Contact_Test.CreatingAContact_Test -->
+      </class> <!-- com.comcast.crm.Organizations_Test.CreateOrgnizationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -13,8 +13,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
-
 import com.comcast.crm.objectrepositoryutility.ContactPage;
 import com.comcast.crm.objectrepositoryutility.CreateOrgPage;
 import com.comcast.crm.objectrepositoryutility.CreatingNewContact;
@@ -53,7 +51,7 @@ public class Baseclass_Test {
 	@BeforeSuite
 	public void ConnectinhToTheDb() throws SQLException {
 
-         dutil.ConnectingToTheDataBase("jdbc:mysql://106.51.90.215:3333/projects", "root@%", "root");
+         dutil.ConnectingToTheDataBase("jdbc:mysql://localhost:3306/sakila", "root", "Bharath@123");
 
 		
 	}
@@ -64,7 +62,7 @@ public class Baseclass_Test {
 
 		driver = wutil.OpenBrowser(driver, putil.GetDataFromPropertyFile("browser"),
 				putil.GetDataFromPropertyFile("url"));
-      sdriver= driver;
+      TreadUsage.setDriver(driver);
 		
 		//TreadUsage.setDriver(driver);
 		driver.manage().window().maximize();
