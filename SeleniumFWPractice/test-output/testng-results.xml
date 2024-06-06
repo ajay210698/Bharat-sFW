@@ -1,88 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="0" failed="1" skipped="0">
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-04T13:07:33 IST" name="Default suite" finished-at="2024-06-04T13:07:48 IST" duration-ms="15901">
+  <suite started-at="2024-06-06T14:51:31 IST" name="Default suite" finished-at="2024-06-06T14:52:10 IST" duration-ms="39384">
     <groups>
       <group name="smoke">
-        <method signature="CreateOrgnizationTest.CreateOrganization()[pri:0, instance:com.comcast.crm.Organizations_Test.CreateOrgnizationTest@3b0fe47a]" name="CreateOrganization" class="com.comcast.crm.Organizations_Test.CreateOrgnizationTest"/>
+        <method signature="CreatingAContact_Test.creatingcontact()[pri:0, instance:com.comcast.crm.Contact_Test.CreatingAContact_Test@47e2e487]" name="creatingcontact" class="com.comcast.crm.Contact_Test.CreatingAContact_Test"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2024-06-04T13:07:33 IST" name="Default test" finished-at="2024-06-04T13:07:48 IST" duration-ms="15901">
-      <class name="com.comcast.crm.Organizations_Test.CreateOrgnizationTest">
-        <test-method is-config="true" signature="ConnectinhToTheDb()[pri:0, instance:com.comcast.crm.Organizations_Test.CreateOrgnizationTest@3b0fe47a]" started-at="2024-06-04T13:07:32 IST" name="ConnectinhToTheDb" finished-at="2024-06-04T13:07:33 IST" duration-ms="447" status="PASS">
+    <test started-at="2024-06-06T14:51:31 IST" name="Default test" finished-at="2024-06-06T14:52:10 IST" duration-ms="39384">
+      <class name="com.comcast.crm.Contact_Test.CreatingAContact_Test">
+        <test-method is-config="true" signature="ConnectinhToTheDb()[pri:0, instance:com.comcast.crm.Contact_Test.CreatingAContact_Test@47e2e487]" started-at="2024-06-06T14:51:31 IST" name="ConnectinhToTheDb" finished-at="2024-06-06T14:51:31 IST" duration-ms="375" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConnectinhToTheDb -->
-        <test-method is-config="true" signature="OpeningBrowser()[pri:0, instance:com.comcast.crm.Organizations_Test.CreateOrgnizationTest@3b0fe47a]" started-at="2024-06-04T13:07:33 IST" name="OpeningBrowser" finished-at="2024-06-04T13:07:36 IST" duration-ms="3081" status="PASS">
+        <test-method is-config="true" signature="OpeningBrowser()[pri:0, instance:com.comcast.crm.Contact_Test.CreatingAContact_Test@47e2e487]" started-at="2024-06-06T14:51:31 IST" name="OpeningBrowser" finished-at="2024-06-06T14:51:45 IST" duration-ms="13662" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpeningBrowser -->
-        <test-method is-config="true" signature="LoggingIntoApp()[pri:0, instance:com.comcast.crm.Organizations_Test.CreateOrgnizationTest@3b0fe47a]" started-at="2024-06-04T13:07:36 IST" name="LoggingIntoApp" finished-at="2024-06-04T13:07:38 IST" duration-ms="1927" status="PASS">
+        <test-method is-config="true" signature="LoggingIntoApp()[pri:0, instance:com.comcast.crm.Contact_Test.CreatingAContact_Test@47e2e487]" started-at="2024-06-06T14:51:45 IST" name="LoggingIntoApp" finished-at="2024-06-06T14:51:48 IST" duration-ms="3399" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoggingIntoApp -->
-        <test-method signature="CreateOrganization()[pri:0, instance:com.comcast.crm.Organizations_Test.CreateOrgnizationTest@3b0fe47a]" started-at="2024-06-04T13:07:38 IST" name="CreateOrganization" finished-at="2024-06-04T13:07:47 IST" duration-ms="9122" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [bharath] but found [Creating New Organization]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [bharath] but found [Creating New Organization]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at com.comcast.crm.Organizations_Test.CreateOrgnizationTest.CreateOrganization(CreateOrgnizationTest.java:24)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="creatingcontact()[pri:0, instance:com.comcast.crm.Contact_Test.CreatingAContact_Test@47e2e487]" started-at="2024-06-06T14:51:48 IST" name="creatingcontact" finished-at="2024-06-06T14:52:08 IST" duration-ms="19645" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateOrganization -->
-        <test-method is-config="true" signature="logoutFromApp()[pri:0, instance:com.comcast.crm.Organizations_Test.CreateOrgnizationTest@3b0fe47a]" started-at="2024-06-04T13:07:47 IST" name="logoutFromApp" finished-at="2024-06-04T13:07:48 IST" duration-ms="1175" status="PASS">
+        </test-method> <!-- creatingcontact -->
+        <test-method is-config="true" signature="logoutFromApp()[pri:0, instance:com.comcast.crm.Contact_Test.CreatingAContact_Test@47e2e487]" started-at="2024-06-06T14:52:08 IST" name="logoutFromApp" finished-at="2024-06-06T14:52:10 IST" duration-ms="2055" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoutFromApp -->
-        <test-method is-config="true" signature="ClosingTehBrowser()[pri:0, instance:com.comcast.crm.Organizations_Test.CreateOrgnizationTest@3b0fe47a]" started-at="2024-06-04T13:07:48 IST" name="ClosingTehBrowser" finished-at="2024-06-04T13:07:48 IST" duration-ms="373" status="PASS">
+        <test-method is-config="true" signature="ClosingTehBrowser()[pri:0, instance:com.comcast.crm.Contact_Test.CreatingAContact_Test@47e2e487]" started-at="2024-06-06T14:52:10 IST" name="ClosingTehBrowser" finished-at="2024-06-06T14:52:10 IST" duration-ms="586" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClosingTehBrowser -->
-        <test-method is-config="true" signature="closingTheDbConnection()[pri:0, instance:com.comcast.crm.Organizations_Test.CreateOrgnizationTest@3b0fe47a]" started-at="2024-06-04T13:07:48 IST" name="closingTheDbConnection" finished-at="2024-06-04T13:07:48 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="closingTheDbConnection()[pri:0, instance:com.comcast.crm.Contact_Test.CreatingAContact_Test@47e2e487]" started-at="2024-06-06T14:52:10 IST" name="closingTheDbConnection" finished-at="2024-06-06T14:52:10 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closingTheDbConnection -->
-      </class> <!-- com.comcast.crm.Organizations_Test.CreateOrgnizationTest -->
+      </class> <!-- com.comcast.crm.Contact_Test.CreatingAContact_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
