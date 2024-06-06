@@ -13,6 +13,8 @@ public class CreatingAContact_Test extends Baseclass_Test {
 	@Test(groups = "smoke")
 	public void creatingcontact() throws Throwable {
      
+		
+		System.out.println("started the testScript creating contcat");
 		hp.getContactModule().click();
 		Thread.sleep(5000);
 		assertEquals(cp.getContactPageHeading().getText(), "Contacts");
